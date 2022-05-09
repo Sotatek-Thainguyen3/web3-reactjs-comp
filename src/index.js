@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {createWeb3ReactRoot, Web3ReactProvider} from "@web3-react/core";
+import {Web3Provider} from "@ethersproject/providers"
 import App from "./App";
 
 function getLibrary(provider, connector) {
-    return new Web3ReactProvider(provider);
+    getLibrary.pollingInterval = 12000;
+    return new Web3Provider(provider);
 }
 
 const Web3ProviderNetwork = createWeb3ReactRoot('NETWORK');

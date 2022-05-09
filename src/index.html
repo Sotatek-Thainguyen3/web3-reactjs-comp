@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,500&amp;display=swap"
+          rel="stylesheet">
+    <script>
+        function toggleGetLink() {
+            const el = document.querySelector('.tour-result');
+            el.style.display = 'block';
+        }
+    </script>
+    <title>Title</title>
+    <style>
+        html {
+            font-size: 16px;
+        }
+
+        *, body {
+            box-sizing: border-box;
+
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: .9rem;
+            font-weight: 400;
+            line-height: 1.6;
+            color: #212529;
+        }
+
+        .tour-wrapper {
+            text-align: center;
+            padding: 1rem;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .tour-logo img {
+            height: 3.125rem;
+            margin-bottom: 1rem;
+        }
+
+        .tour-intro {
+            color: #525151;
+            margin-bottom: 1rem;
+        }
+
+        .progressbar {
+            margin: 0;
+            padding: 0;
+            counter-reset: step;
+        }
+
+        .progressbar li {
+            list-style-type: none;
+            width: 50%;
+            float: left;
+            font-size: 12px;
+            position: relative;
+            text-align: center;
+            text-transform: uppercase;
+            color: #7d7d7d;
+        }
+
+        .progressbar li.active-step {
+            color: red;
+        }
+
+        .progressbar li.active-step:before {
+            border: 2px solid red;
+        }
+
+        .progressbar li:before {
+            width: 30px;
+            height: 30px;
+            content: counter(step);
+            counter-increment: step;
+            line-height: 30px;
+            border: 2px solid #7d7d7d;
+            display: block;
+            text-align: center;
+            margin: 0 auto 10px auto;
+            border-radius: 50%;
+            background-color: white;
+        }
+
+        .progressbar li:not(:last-child):after {
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            content: '';
+            background-color: black;
+            left: 50%;
+            top: 1rem;
+            z-index: -1;
+        }
+
+        .tour-register {
+            width: 100%;
+            background-color: red;
+            color: white;
+            margin-top: 1rem;
+            padding: 1.25rem;
+            text-align: start;
+        }
+
+        .tour-register .tour-register__field-label, .tour-register .tour-register__btn-link {
+            color: white;
+        }
+
+        .tour-register input {
+            width: 100%;
+            padding: .5rem;
+            line-height: 1rem;
+            border-radius: .3rem;
+            border: 1px solid rgb(194, 192, 192);
+        }
+
+        .tour-register button {
+            background-color: #227dc7;
+            padding: 0.2rem;
+            border-radius: 0.3rem;
+            border: 1px solid #227dc7;
+            margin-top: 1rem;
+        }
+
+        .tour-result {
+            display: none;
+        }
+
+        .tour-result-title {
+            font-weight: bold;
+            color: white;
+            margin-top: 1rem
+        }
+
+        .tour-result-item {
+            padding: 1rem;
+            background-color: white;
+            margin-bottom: 1rem;
+        }
+
+        .tour-result-item a {
+            word-wrap: break-word
+        }
+
+        .tour-result-wrapper .tour-result-item :not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        .tour-note {
+            text-align: start;
+            margin-top: 1rem;
+        }
+
+        .tour-note__title {
+            margin-bottom: 0;
+        }
+
+        .highlight-red {
+            color: red;
+            font-weight: bold;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        @media (min-width: 576px) {
+            .tour-wrapper {
+                max-width: 540px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .tour-wrapper {
+                max-width: 720px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .tour-wrapper {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .tour-wrapper {
+                max-width: 1140px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="tour-wrapper">
+    <div class="tour-logo">
+        <img src="http://www.hinhtourdao.com/logo.png" alt="">
+    </div>
+    <div class="tour-intro">
+        <div><span style="font-weight: bold">Tour nam đảo</span> xin được gửi lời cảm ơn chân thành đến quý khách hàng
+            đã tin tưởng và sử dụng
+            dịch vụ của
+            chúng tôi.
+        </div>
+        <div>Để nhận hình ảnh đi tour, quý khách hàng vui lòng thực hiện theo các bước sau đây:</div>
+    </div>
+    <ul class="tour-step progressbar">
+        <li class="active-step">NHẬP NGÀY ĐI TOUR</li>
+        <li class="">NHẬN LINK ẢNH</li>
+    </ul>
+    <div class="clearfix"></div>
+    <div class="tour-register">
+        <div class="tour-register__field">
+            <div class="tour-register__field-label">Nhập ngày đi tour:</div>
+            <input type="text" class="tour-register__field-input">
+        </div>
+        <button type="button" class="tour-register__btn-link" onclick="toggleGetLink()">Nhận link ảnh</button>
+
+        <div class="tour-result">
+            <p class="tour-result-title">TOUR NGÀY 04/05/2022</p>
+
+            <div class="tour-result-wrapper">
+                <div class="tour-result-item">1. FLYCAM - Video - <br> <a
+                        href="https://drive.google.com/drive/folders/1xDeWhKUmVUyK4bgCdVmmBydZax3l0lp1?usp=sharing">https://drive.google.com/drive/folders/1xDeWhKUmVUyK4bgCdVmmBydZax3l0lp1?usp=sharing</a>
+                </div>
+                <div class="tour-result-item">2. ẢNH SUP - Ảnh - <br> <a
+                        href="https://drive.google.com/drive/folders/1xDeWhKUmVUyK4bgCdVmmBydZax3l0lp1?usp=sharing">https://drive.google.com/drive/folders/1xDeWhKUmVUyK4bgCdVmmBydZax3l0lp1?usp=sharing</a>
+                </div>
+                <div class="tour-result-item">3. ẢNH MÁY CƠ - Ảnh - PHOTO KHÁNH NGUYỄN <br> <a
+                        href="https://drive.google.com/drive/folders/1xDeWhKUmVUyK4bgCdVmmBydZax3l0lp1?usp=sharing">https://drive.google.com/drive/folders/1xDeWhKUmVUyK4bgCdVmmBydZax3l0lp1?usp=sharing</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tour-note">
+        <p class="highlight-red tour-note__title">LƯU Ý:</p>
+        <li>Hình ảnh chỉ <span class="highlight-red">LƯU TỐI ĐA 2 THÁNG</span> sau khi đi tour. Sau 2 tháng chúng tôi sẽ
+            xóa hoàn toàn nên quý khách vui
+            lòng tải ngay sau khi có ảnh.
+        </li>
+        <li>Tối thiểu <span class="highlight-red">sau 2 ngày đi tour</span> thì hình ảnh sẽ được upload đầy đủ, vì ảnh
+            phải được chỉnh sửa để gửi cho quý khách hàng.
+        </li>
+        <li>Nếu không nhận được link, vui lòng liên hệ <span class="highlight-red">ZALO 090.1111.049</span></li>
+    </div>
+</div>
+</body>
+</html>
